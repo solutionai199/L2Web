@@ -1,0 +1,62 @@
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    background: url(img/bunker%20home%20page.jpg) fixed no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 25% 150px auto;
+}
+
+a {
+    text-decoration: none;
+    font-size: 2.5vw;
+    color: black;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.vertical-nav a:hover {
+    text-decoration: underline white;
+}
+
+.sidebar {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2fr 2fr 2fr 2fr;
+    height: 100vh;
+    width: 12vw;
+    background-color: #363636;
+    border-right: 0.75vw solid black;
+    position: fixed;
+    transition: 0.5s;
+    
+}
+
+.openbtn {
+    font-size: 50px;
+    background-color: #363636;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #111;
+}
+
+
+
