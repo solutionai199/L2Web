@@ -1,26 +1,15 @@
+var CLOSED = true;
+var OPEN = false;
 
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-    
-  document.getElementById("mySidebar").style.display = "grid";
+function Nav() {
+    if (CLOSED) {
+        document.getElementById("mySidebar").style.width = "0px";
+        CLOSED = false;
+        OPEN = true;
+
+    } else {
+        document.getElementById("mySidebar").style.width = "12vw";
+        CLOSED = true;
+    }
+
 }
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-  document.getElementById("mySidebar").style.display = "none";
-}
-
-//var onoff = true;
-//
-//function hide(){
-//    if(var onoff = true){
-//        display: none;
-//    }
-//    else {
-//        display-none: false;
-//    }
-//    
-// 
-//}

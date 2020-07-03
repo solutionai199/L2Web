@@ -16,8 +16,8 @@ html {
 
 .main {
     display: grid;
-    grid-template-columns: 200px auto;
-    grid-template-rows: 25% 150px auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: 0.5fr 3fr;
 }
 
 a {
@@ -29,11 +29,22 @@ a {
     justify-content: center;
 }
 
-.vertical-nav a:hover {
+.sidebar a:hover {
     text-decoration: underline white;
 }
 
+.overflow-nav {
+    display: grid;
+    height: auto;
+    width: 12vw;
+/*    border-right: 0.75vw solid black;*/
+/*    background-color: #363636;*/
+/*    text-align: center;*/
+}
+
 .sidebar {
+    grid-column: 1/2;
+    grid-row: 2/3;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 2fr 2fr 2fr 2fr;
@@ -41,22 +52,22 @@ a {
     width: 12vw;
     background-color: #363636;
     border-right: 0.75vw solid black;
-    position: fixed;
     transition: 0.5s;
-    
+    overflow: hidden;
+
 }
 
 .openbtn {
-    font-size: 50px;
-    background-color: #363636;
-    color: white;
+    justify-self: center;
+    font-size: 70px;
+    background-color:transparent;
+    color: black;
     padding: 10px 15px;
     border: none;
+    overflow: visible;
+    margin: auto;
 }
 
 .openbtn:hover {
-    background-color: #111;
+    background-color: #363636;
 }
-
-
-
