@@ -18,8 +18,8 @@ html {
     display: grid;
     grid-template-columns: 12vw auto;
     grid-template-rows: 0.5fr;
-    
-    
+
+
 }
 
 a {
@@ -34,6 +34,12 @@ a {
 .sidebar a:hover {
     text-decoration: underline white;
 }
+
+/*
+.sidebar a:active {
+    text-decoration: underline red;
+}
+*/
 
 .overflow-nav {
     display: grid;
@@ -55,7 +61,7 @@ a {
 
 .openbtn {
     justify-self: center;
-    font-size: 70px;
+    font-size: 5vw;
     background-color: transparent;
     color: black;
     padding: 10px 15px;
@@ -83,30 +89,71 @@ section {
     display: grid;
     grid-template-columns: 0.5fr 4fr 0.5fr;
     grid-template-rows: 1fr 3fr 1fr;
-    background-color: rgba(255,69,0,0.5);
-    padding: 10px 5px;
-    margin-left: 28px;
-    border: 3px solid black;
-    align-content: center;
-    height: 100vh;
+    background-color: rgba(54, 54, 54, 0.5);
+    padding: 0.5vw;
+    margin: 2vw 1.25vw 1.25vw;
+    border: 0.25vw solid black;
+/*    align-content: center;*/
+    height: 90vh;
     width: 75vw;
-    
+    transition: 0.5s;
+
 }
 
 h1 {
     text-align: center;
     grid-column: 2/3;
-    margin-top: 15px;
+    margin-top: 1vw;
     text-decoration: underline;
-    font-size: 40px;
+    font-size: 2.5vw;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    margin: 0.05vw;
+    color: white;
+    font-size: 1.25vw;
 }
 
 p {
-    font-size: 20px;
+    font-size: 1.05vw;
     font-weight: bold;
     text-align: center;
+    margin-top: 1vw;
+    color: white;
+
+}
+
+img {
+    height: 17vh;
+    margin: auto;
+}
+
+.main-text {
     grid-row: 2/3;
     grid-column: 2/3;
-    margin-top: 15px;
-    
+
+}
+
+.boxes {
+    display: grid;
+    grid-column: 1/end;
+    grid-row: 2/3;
+    grid-template-columns: repeat(auto-fill, minmax(15vw, auto));
+    grid-template-rows: repeat(auto, auto);
+    margin:  auto;
+    width: 70vw;
+    height: 60vh;
+    transition: 0.5s;
+    align-self: center;
+}
+
+.item-containers {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.25fr;
+    height: auto;
+    margin: 1vw auto;
 }
