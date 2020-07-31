@@ -157,3 +157,38 @@ img {
     height: auto;
     margin: 1vw auto;
 }
+
+.case {
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 1/end;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    grid-template-rows: repeat(1fr, auto);
+}
+
+.btn-grid {
+    height: 30vh;
+    width: 30vw;
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.quiz-btn {
+    background-color: orange;
+}
+
+.controls {
+    color: blue;
+}
+
+
+
+    
+
+
+
+
+
+
