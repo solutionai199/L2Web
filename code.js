@@ -22,7 +22,16 @@ function Nav() {
 
 }  
 
+var quizQuestions = ['What is my favourite color?', 'what is my favourite subject?'];
 
-function changeColor() {
-    
+
+
+function questions() {
+    console.log('please work');
+    var randQ = Math.floor(Math.random()*quizQuestions.length);
+    document.getElementById('questions').innerHTML = quizQuestions[randQ];
+}
+
+function check() {
+    console.log('yep');
 }
