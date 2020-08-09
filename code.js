@@ -29,7 +29,11 @@ var score = 0;
             'How long can you survive without food?', //1
             'Which of the following will help you survive best?', //2
             'What should you not do in the event of a nuclear explosion nearby?', //3
-            'What is the most dangerous part of a necular bomb?' //4
+            'What is the most dangerous part of a nuclear bomb?', //4
+            'How many types of radiation can fallout from a nuclear bomb emit?', //5
+            'How far underground is recommended to build a nuclear bunker?', //6
+            'What material should you build a bunker with?', //7
+            'What should you must have in a bunker?', //8
         ];
         
         var answers = [
@@ -37,7 +41,11 @@ var score = 0;
             ['3 hours', '3 days', '3 weeks', '2 weeks'], //[1][0-3]
             ['Experience', 'A positive mental attitude', 'Skill', 'Luck'], //[2][0-3]
             ['Go outside', 'Stay put', 'Get away from the blast','Seek shelter'], //[3][0-3]
-            ['The fireball', 'The blast wave', 'The radiation', 'The size']
+            ['The fireball', 'The blast wave', 'The radiation', 'The size'], //[4][0-3]
+            ['2', '4', '6', '3'], //[5][0-3]
+            ['3m', '2m', '1m', '3ft'], //[6][0-3]
+            ['Plastic', 'Aluminium', 'Concrete', 'Lead'], //[7][0-3]
+            ['Ventilation', 'Generator', 'Water filter', 'All of these'] //[8][0-3]
         ];
         
         var randQ = 0;
@@ -108,6 +116,54 @@ var score = 0;
               }
          if(randQ == 4){
               if(answer == 2) {
+                 document.getElementById('result').innerHTML = 'Correct';
+                  correct = true;
+                 document.getElementById('result').style.color = 'green';
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
+        if(randQ == 5){
+              if(answer == 3) {
+                 document.getElementById('result').innerHTML = 'Correct';
+                  correct = true;
+                 document.getElementById('result').style.color = 'green';
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
+         if(randQ == 6){
+              if(answer == 0) {
+                 document.getElementById('result').innerHTML = 'Correct';
+                  correct = true;
+                 document.getElementById('result').style.color = 'green';
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
+        if(randQ == 7){
+              if(answer == 2) {
+                 document.getElementById('result').innerHTML = 'Correct';
+                  correct = true;
+                 document.getElementById('result').style.color = 'green';
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
+        if(randQ == 8){
+              if(answer == 3) {
                  document.getElementById('result').innerHTML = 'Correct';
                   correct = true;
                  document.getElementById('result').style.color = 'green';
