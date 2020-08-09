@@ -22,42 +22,140 @@ function Nav() {
 
 }
 
-var quizQuestions = ['What is my favourite color?', //1
-                     'what is my favourite subject?', //2
-                     'what time is it?']; //3
-
-var answers = [
-    [
-    'Red', //1
-     'green' //2
-    ], // [1][1-2]
-    [
-    'not maths', //1
-    'dtc' //2
-    ], //[2][1-2]
-    [
-    'time', //1
-    'lunch time' //2
-    ] //[3][1-2]
-    ];
-
-
-
-function loadQuestions() {
-    console.log('please work');
-    var randQ = Math.floor(Math.random() * quizQuestions.length);
-    document.getElementById('questions').innerHTML = quizQuestions[randQ];
-    
-    for(var i=0;i<3;i++){
-        document.getElementById('answer-btn1' +i).innerHTML = answers[randQ][i];
+var score = 0;
+        
+        var questions = [
+            'What is the most important thing needed to survive?', //0
+            'How long can you survive without food?', //1
+            'Which of the following will help you survive best?', //2
+            'What should you not do in the event of a nuclear explosion nearby?', //3
+            'What is the most dangerous part of a necular bomb?' //4
+        ];
+        
+        var answers = [
+            ['Food', 'Water', 'Warmth', 'Entertainment'], //[0][0-3]
+            ['3 hours', '3 days', '3 weeks', '2 weeks'], //[1][0-3]
+            ['Experience', 'A positive mental attitude', 'Skill', 'Luck'], //[2][0-3]
+            ['Go outside', 'Stay put', 'Get away from the blast','Seek shelter'], //[3][0-3]
+            ['The fireball', 'The blast wave', 'The radiation', 'The size']
+        ];
+        
+        var randQ = 0;
+        
+        function loadQuestion(){
+            randQ = Math.floor(Math.random()*questions.length);
+            document.getElementById('question').innerHTML = questions[randQ];
+            
+            for(var i=0;i<4;i++){
+                document.getElementById('aText'+i).innerHTML = answers[randQ][i];
+            }
+        }
+        
+    function check(){        
+       if(randQ == 0){
+              if(answer == 1){
+                 document.getElementById('result').innerHTML = 'Correct';
+                  correct = true;
+                 document.getElementById('result').style.color = 'green';
+//                  loadQuestion();
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+//                  setTimeout(
+//                        function(){
+//                             window.location.href='testing.html';
+//                      }
+//                          , 2000)  
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
+         if(randQ == 1){
+              if(answer == 2){
+                 document.getElementById('result').innerHTML = 'Correct';
+                    correct = true;
+                 document.getElementById('result').style.color = 'green';
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
+         if(randQ == 2){
+              if(answer == 1){
+                 document.getElementById('result').innerHTML = 'Correct';
+                    correct = true;
+                 document.getElementById('result').style.color = 'green';
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
+        if(randQ == 3){
+              if(answer == 0) {
+                 document.getElementById('result').innerHTML = 'Correct';
+                  correct = true;
+                 document.getElementById('result').style.color = 'green';
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
+         if(randQ == 4){
+              if(answer == 2) {
+                 document.getElementById('result').innerHTML = 'Correct';
+                  correct = true;
+                 document.getElementById('result').style.color = 'green';
+                  score++;
+                  document.getElementById('score').innerHTML = 'Score = ' + score;
+                 }else{
+                     document.getElementById('result').innerHTML = 'Incorrect';
+                     document.getElementById('result').style.color = 'red';
+                 }
+              }
     }
-}
-
-function check() {
-    console.log('yep');
-}
-
-window.onload = function() {
-    loadQuestions();
-
-}
+        
+        var correct = false;
+        
+        function next(){
+            if(correct == true){
+            loadQuestion();
+            document.getElementById('result').innerHTML = "";
+                correct = false;
+            }
+        }
+        
+        function button0(){
+            document.getElementById('answer0').style.backgroundColor = 'grey';
+            document.getElementById('answer1').style.backgroundColor = 'orange';
+            document.getElementById('answer2').style.backgroundColor = 'orange';
+            document.getElementById('answer3').style.backgroundColor = 'orange';
+        }
+        function button1(){
+            document.getElementById('answer0').style.backgroundColor = 'orange';
+            document.getElementById('answer1').style.backgroundColor = 'grey';
+            document.getElementById('answer2').style.backgroundColor = 'orange';
+            document.getElementById('answer3').style.backgroundColor = 'orange';
+        }
+        function button2(){
+            document.getElementById('answer0').style.backgroundColor = 'orange';
+            document.getElementById('answer1').style.backgroundColor = 'orange';
+            document.getElementById('answer2').style.backgroundColor = 'grey';
+            document.getElementById('answer3').style.backgroundColor = 'orange';
+        }
+        function button3(){
+            document.getElementById('answer0').style.backgroundColor = 'orange';
+            document.getElementById('answer1').style.backgroundColor = 'orange';
+            document.getElementById('answer2').style.backgroundColor = 'orange';
+            document.getElementById('answer3').style.backgroundColor = 'grey';
+        }
+        
+        
+        window.onload = function() {
+        loadQuestion();
+        }
