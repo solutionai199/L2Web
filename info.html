@@ -30,21 +30,21 @@
 
                 <div id="answer-buttons" class="btn-grid">
 
-                    <button class="quiz-btn" id="answer0" onclick="answer = 0; button0()">
+                    <button class="quiz-btn" id="answer0" onclick="answer = 0; button0(); check()">
                         <p1 id="aText0"></p1>
                     </button>
-                    <button class="quiz-btn" id="answer1" onclick="answer = 1; button1()">
+                    <button class="quiz-btn" id="answer1" onclick="answer = 1; button1(); check()">
                         <p1 id="aText1"></p1>
                     </button>
-                    <button class="quiz-btn" id="answer2" onclick="answer = 2; button2()">
+                    <button class="quiz-btn" id="answer2" onclick="answer = 2; button2(); check()">
                         <p1 id="aText2"></p1>
                     </button>
-                    <button class="quiz-btn" id="answer3" onclick="answer = 3; button3()">
+                    <button class="quiz-btn" id="answer3" onclick="answer = 3; button3(); check()" >
                         <p1 id="aText3"></p1>
                     </button>
                 </div>
                 <div class="controls">
-                    <button class="check-btn" onclick="check()">Check</button>
+<!--                    <button class="check-btn" onclick="check()">Check</button>-->
                     <button class="next-btn" onclick="next()">Next</button>
                     <div class="resultText" id="result"></div>
                 </div>
