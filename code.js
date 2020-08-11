@@ -51,13 +51,14 @@ var answers = [
 var randQ = 0;
 var stop = false;
 var correct = false;
-
+var num = 0;
 function loadQuestion() {
     randQ = Math.floor(Math.random() * questions.length);
-    document.getElementById('question').innerHTML = questions[randQ];
+    document.getElementById('question').innerHTML = questions[num];
 
+    num++
     for (var i = 0; i < 4; i++) {
-        document.getElementById('aText' + i).innerHTML = answers[randQ][i];
+        document.getElementById('aText' + i).innerHTML = answers[num][i];
     }
 }
 
@@ -74,6 +75,7 @@ function correctAnswer() {
 function incorrectAnswer() {
     document.getElementById('result').innerHTML = 'Incorrect';
     document.getElementById('result').style.color = 'red';
+//    document.getElementById('answer'+i).style.backgroundColor = 'red';
 }
 
 function check() {
@@ -192,6 +194,10 @@ function button3() {
         document.getElementById('answer3').style.backgroundColor = 'grey';
     }
 }
+
+//function showResults(){
+//    correctAnswer = questions.length;
+//}
 
 
 window.onload = function () {
