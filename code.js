@@ -22,7 +22,6 @@ function Nav() {
 
 }
 
-var score = 0;
 
 var questions = [
             'What is the most important thing needed to survive?', //0
@@ -48,20 +47,33 @@ var answers = [
             ['Ventilation', 'Generator', 'Water filter', 'All of these'] //[8][0-3]
         ];
 
-var randQ = 0;
+var score = 0;
+var randQ = -1;
 var stop = false;
 var correct = false;
-var num = 0;
+var colorChange0 = 'white';
+var colorChange1 = 'white';
+var colorChange2 = 'white';
+var colorChange3 = 'white';
+var resetBtn = false;
+//var questionCount = 0;
+
+
 function loadQuestion() {
-    randQ = Math.floor(Math.random() * questions.length);
-    document.getElementById('question').innerHTML = questions[num];
-
-    num++
+    //    randQ = Math.floor(Math.random() * questions.length);
+    randQ++;
+    document.getElementById('question').innerHTML = questions[randQ];
+    //    document.getElementById('question').innerHTML = questions[questionCount];
+    //    questionCount++;
+    //    console.log(questionCount);
+    console.log(randQ);
     for (var i = 0; i < 4; i++) {
-        document.getElementById('aText' + i).innerHTML = answers[num][i];
+        document.getElementById('aText' + i).innerHTML = answers[randQ][i];
+        //        document.getElementById('aText' + i).innerHTML = answers[questionCount][i];
     }
+    allOrange();
+    button0();
 }
-
 
 function correctAnswer() {
     document.getElementById('result').innerHTML = 'Correct';
@@ -75,7 +87,9 @@ function correctAnswer() {
 function incorrectAnswer() {
     document.getElementById('result').innerHTML = 'Incorrect';
     document.getElementById('result').style.color = 'red';
-//    document.getElementById('answer'+i).style.backgroundColor = 'red';
+    stop = true;
+    correct = true;
+    //    document.getElementById('answer'+i).style.backgroundColor = 'red';
 }
 
 function check() {
@@ -83,64 +97,114 @@ function check() {
         if (randQ == 0) {
             if (answer == 1) {
                 correctAnswer();
+                allOrange();
+                colorChange1 = 'green';
             } else {
                 incorrectAnswer();
+                allOrange();
+                colorChange1 = 'green';
+                incorrectCheck();
             }
         }
         if (randQ == 1) {
             if (answer == 2) {
                 correctAnswer();
+                allOrange();
+                colorChange2 = 'green';
             } else {
                 incorrectAnswer();
+                allOrange();
+                colorChange2 = 'green';
+                incorrectCheck();
             }
         }
         if (randQ == 2) {
             if (answer == 1) {
                 correctAnswer();
+                allOrange();
+                colorChange1 = 'green';
             } else {
                 incorrectAnswer();
+                allOrange();
+                colorChange1 = 'green';
+                incorrectCheck();
             }
         }
         if (randQ == 3) {
             if (answer == 0) {
                 correctAnswer();
+                allOrange();
+                colorChange0 = 'green';
             } else {
-               incorrectAnswer();
+                incorrectAnswer();
+                allOrange();
+                colorChange0 = 'green';
+                incorrectCheck();
             }
         }
         if (randQ == 4) {
             if (answer == 2) {
                 correctAnswer();
+                allOrange();
+                colorChange2 = 'green';
             } else {
                 incorrectAnswer();
+                allOrange();
+                colorChange2 = 'green';
+                incorrectCheck();
             }
         }
         if (randQ == 5) {
             if (answer == 3) {
                 correctAnswer();
+                allOrange();
+                colorChange3 = 'green';
             } else {
                 incorrectAnswer();
+                allOrange();
+                colorChange3 = 'green';
+                incorrectCheck();
             }
         }
         if (randQ == 6) {
             if (answer == 0) {
                 correctAnswer();
+                allOrange();
+                colorChange0 = 'green';
             } else {
                 incorrectAnswer();
+                allOrange();
+                colorChange0 = 'green';
+                incorrectCheck();
             }
         }
         if (randQ == 7) {
             if (answer == 2) {
                 correctAnswer();
+                allOrange();
+                colorChange2 = 'green';
             } else {
                 incorrectAnswer();
+                allOrange();
+                colorChange2 = 'green';
+                incorrectCheck();
             }
         }
         if (randQ == 8) {
             if (answer == 3) {
                 correctAnswer();
+                allOrange();
+                colorChange3 = 'green';
             } else {
                 incorrectAnswer();
+                allOrange();
+                colorChange3 = 'green';
+                incorrectCheck();
+            }
+            if(randQ >=8){
+                document.getElementById('nextBtn').innerHTML = 'Results';
+                document.getElementById('nextBtn').style.display = 'block';
+                
             }
         }
     }
@@ -148,57 +212,102 @@ function check() {
 
 
 function next() {
-    if (correct == true) {
-        loadQuestion();
-        document.getElementById('result').innerHTML = "";
-        correct = false;
-        for (var i = 0; i < 4; i++) {
-            document.getElementById('answer' + i).style.backgroundColor = 'orange';
-        }
-        stop = false;
+    if(resetBtn == true){
+       window.location.href='info.html';
     }
+    if(randQ <=7){
+        
+        if (correct == true) {
+            
+            if(randQ >=7){
+                document.getElementById('nextBtn').style.display = 'none';
+//                document.getElementById('nextBtn').innerHTML = 'Results';
+            }
+            loadQuestion();
+            document.getElementById('result').innerHTML = "";
+            correct = false;
+            for (var i = 0; i < 4; i++) {
+                document.getElementById('answer' + i).style.backgroundColor = 'orange';
+            }
+            stop = false;
+        }
+    } else {
+        for(i = 0; i < 4; i++){
+        document.getElementById('answer'+i).style.display = 'none';
+        }
+        document.getElementById('answer-buttons').style.display = 'none';
+         document.getElementById('result').style.display = "none";
+        document.getElementById('question').style.display = 'none';
+        document.getElementById('score').style.fontSize = '40px';
+        
+        document.getElementById('nextBtn').innerHTML = "Try Again?"; 
+        resetBtn = true;
+    }  
+    console.log(randQ);
 }
 
 function button0() {
-    if (stop == false) {
-        document.getElementById('answer0').style.backgroundColor = 'grey';
-        document.getElementById('answer1').style.backgroundColor = 'orange';
-        document.getElementById('answer2').style.backgroundColor = 'orange';
-        document.getElementById('answer3').style.backgroundColor = 'orange';
+    if (stop == true) {
+        document.getElementById('answer0').style.backgroundColor = colorChange0;
+        document.getElementById('answer1').style.backgroundColor = colorChange1;
+        document.getElementById('answer2').style.backgroundColor = colorChange2;
+        document.getElementById('answer3').style.backgroundColor = colorChange3;
+        console.log(colorChange2);
     }
 }
 
-function button1() {
-    if (stop == false) {
-        document.getElementById('answer0').style.backgroundColor = 'orange';
-        document.getElementById('answer1').style.backgroundColor = 'grey';
-        document.getElementById('answer2').style.backgroundColor = 'orange';
-        document.getElementById('answer3').style.backgroundColor = 'orange';
-    }
-}
-
-function button2() {
-    if (stop == false) {
-        document.getElementById('answer0').style.backgroundColor = 'orange';
-        document.getElementById('answer1').style.backgroundColor = 'orange';
-        document.getElementById('answer2').style.backgroundColor = 'grey';
-        document.getElementById('answer3').style.backgroundColor = 'orange';
-    }
-}
-
-function button3() {
-    if (stop == false) {
-        document.getElementById('answer0').style.backgroundColor = 'orange';
-        document.getElementById('answer1').style.backgroundColor = 'orange';
-        document.getElementById('answer2').style.backgroundColor = 'orange';
-        document.getElementById('answer3').style.backgroundColor = 'grey';
-    }
-}
-
-//function showResults(){
-//    correctAnswer = questions.length;
+//function button1() {
+//    if (stop == false) {
+//        document.getElementById('answer0').style.backgroundColor = colorChange0;
+//        document.getElementById('answer1').style.backgroundColor = colorChange1;
+//        document.getElementById('answer2').style.backgroundColor = colorChange2;
+//        document.getElementById('answer3').style.backgroundColor = colorChange3;
+//    }
+//}
+//
+//function button2() {
+//    if (stop == false) {
+//        document.getElementById('answer0').style.backgroundColor = colorChange0;
+//        document.getElementById('answer1').style.backgroundColor = colorChange1;
+//        document.getElementById('answer2').style.backgroundColor = colorChange2;
+//        document.getElementById('answer3').style.backgroundColor = colorChange3;
+//    }
+//}
+//
+//function button3() {
+//    if (stop == false) {
+//        document.getElementById('answer0').style.backgroundColor = colorChange0;
+//        document.getElementById('answer1').style.backgroundColor = colorChange1;
+//        document.getElementById('answer2').style.backgroundColor = colorChange2;
+//        document.getElementById('answer3').style.backgroundColor = colorChange3;
+//    }
 //}
 
+function incorrectCheck() {
+    if (answer == 0) {
+        colorChange0 = 'red';
+    }
+    if (answer == 1) {
+        colorChange1 = 'red';
+    }
+    if (answer == 2) {
+        colorChange2 = 'red';
+    }
+    if (answer == 3) {
+        colorChange3 = 'red';
+    }
+}
+
+function allOrange() {
+    colorChange0 = 'orange';
+    colorChange1 = 'orange';
+    colorChange2 = 'orange';
+    colorChange3 = 'orange';
+}
+
+function showResults() {
+
+}
 
 window.onload = function () {
     loadQuestion();
