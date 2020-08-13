@@ -33,12 +33,6 @@ a {
     text-decoration: underline white;
 }
 
-/*
-.sidebar a:active {
-    text-decoration: underline red;
-}
-*/
-
 .overflow-nav {
     display: grid;
     height: auto;
@@ -78,7 +72,6 @@ a {
     transition: 0.5s;
     height: 100vh;
     width: 0vw;
-
 }
 
 section {
@@ -95,7 +88,6 @@ section {
     width: 75vw;
     transition: 0.5s;
     overflow-y: scroll;
-
 }
 
 h1 {
@@ -121,7 +113,6 @@ p {
     text-align: center;
     margin-top: 1vw;
     color: white;
-
 }
 
 img {
@@ -133,7 +124,6 @@ img {
 .main-text {
     grid-row: 2/3;
     grid-column: 2/3;
-
 }
 
 .boxes {
@@ -180,7 +170,6 @@ ol {
     color: white;
     margin: 0.5vw;
     display: block;
-    /*    text-align: center;*/
 }
 
 ul {
@@ -190,15 +179,11 @@ ul {
     margin: 0.5vw;
     display: block;
     text-decoration: none;
-    /*    text-align: center;*/
 }
 
 li {
     text-align: center;
     text-decoration: none;
-
-
-    /*    display: block;*/
 }
 
 .pistols,
@@ -209,7 +194,7 @@ li {
     display: grid;
     grid-column: 1/end;
     grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-    grid-template-rows: auto repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
     margin: auto 1vw 2vh 1vw;
     width: 70vw;
     height: auto;
@@ -217,14 +202,23 @@ li {
     align-self: center;
 }
 
+@media screen and (min-width: 1330px) {
+    .pistols,
+    .SMGS,
+    .assaultRifles,
+    .shotguns,
+    .sniperRifles {
+        grid-template-columns: repeat(4, minmax(250px, auto));
+    }
+}
+
 .weapon-containers {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.25fr auto 0.25fr;
+    grid-template-rows: 0.25fr auto;
     height: auto;
     margin: 2vh 2vw 1.5vw 2vw;
     background-color: black;
-    /*    padding: 2vh;*/
 }
 
 h5 {
@@ -241,7 +235,7 @@ h5 {
     grid-row: 1/2;
     grid-column: 2/3;
     display: grid;
-    grid-template-columns: 0.5fr 4fr 0.5fr;
+    grid-template-columns: 0.25fr 4fr 0.25fr;
     grid-template-rows: repeat(6, auto);
     background-color: rgba(54, 54, 54, 0.5);
     padding: 0.5vw;
@@ -265,24 +259,24 @@ p2 {
 .entertainmentSection {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr auto 70fr;
+    grid-template-rows: 1fr auto;
 }
 
 
 .ballButton {
     width: 15vw;
     height: 3vw;
-    margin: 0 auto;
+    margin: 0px auto;
     text-align: center;
     align-self: center;
 }
 
 .optionImages {
     text-align: center;
-    /*    width: 38vw;*/
+    width: 38vw;
     max-height: 50vh;
     margin-top: 2vh;
-    border: 0.2vw solid rgb(4, 4, 131, 1);
+    border: 0.2vw solid rgb(255, 0, 0, 1);
 }
 
 

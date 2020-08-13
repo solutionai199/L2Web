@@ -1,8 +1,8 @@
+/* eslint-env browser */
 var CLOSED = false;
 var OPEN = false;
 
 function Nav() {
-    console.log('working?')
     if (CLOSED) {
         document.getElementById("mySidebar").style.width = '0px';
         document.getElementById("mySidebar").style.border = '0vw solid black';
@@ -22,18 +22,17 @@ function Nav() {
 
 }
 
-var options = ['music', 'art', 'Board Games', 'Football', 'Basketball'];
+var options = ['Music', 'Art', 'Board Games', 'Football', 'Basketball', 'Hide and Seek', 'Fitness'];
 
-var imgs = ['', 'Images/Entertainment/art.jpg', '', '', ''];
+var imgs = ['Images/Entertainment/music.jpg', 'Images/Entertainment/art.jpg', 'Images/Entertainment/boardGames.jpg', 'Images/Entertainment/football.jpg', 'Images/Entertainment/basketball.jpg', 'Images/Entertainment/hide-and-seek.jpg', 'Images/Entertainment/fitness.png'];
 
 function entertainment() {
   
-   var rand = Math.floor(Math.random() * options.length); //gets a random number based on lenth of arrays
+   var rand = Math.floor(Math.random() * options.length);
 
     document.getElementById('text').innerHTML = options[rand];
     document.getElementById('optionsImgs').src = imgs[rand];
-    document.getElementById('optionsImgs').style.border = '';
-    //changes html and css based of what the randomley selected number from array is made
+    console.log(rand);
 }
 
 var questions = [
@@ -86,7 +85,6 @@ function correctAnswer() {
     correct = true;
     document.getElementById('result').style.color = 'green';
     score++;
-//    document.getElementById('score').innerHTML = 'Score = ' + score;
     stop = true;
 }
 
@@ -249,7 +247,6 @@ function next() {
         document.getElementById('nextBtn').innerHTML = "Try Again?"; 
         resetBtn = true;
     }  
-    console.log(randQ);
 }
 
 function button0() {
@@ -258,7 +255,6 @@ function button0() {
         document.getElementById('answer1').style.backgroundColor = colorChange1;
         document.getElementById('answer2').style.backgroundColor = colorChange2;
         document.getElementById('answer3').style.backgroundColor = colorChange3;
-        console.log(colorChange2);
     }
 }
 
