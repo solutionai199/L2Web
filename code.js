@@ -2,7 +2,7 @@
 var CLOSED = false;
 var OPEN = false;
 
-function Nav() {
+function Nav() { // javascript that makes the vertical nav button work
     if (CLOSED) {
         document.getElementById("mySidebar").style.width = '0px';
         document.getElementById("mySidebar").style.border = '0vw solid black';
@@ -22,20 +22,20 @@ function Nav() {
 
 }
 
-var options = ['Music', 'Art', 'Board Games', 'Football', 'Basketball', 'Hide and Seek', 'Fitness'];
+var options = ['Music', 'Art', 'Board Games', 'Football', 'Basketball', 'Hide and Seek', 'Fitness']; //activity options for the entertianment javascript button f
 
-var imgs = ['Images/Entertainment/music.jpg', 'Images/Entertainment/art.jpg', 'Images/Entertainment/boardGames.jpg', 'Images/Entertainment/football.jpg', 'Images/Entertainment/basketball.jpg', 'Images/Entertainment/hide-and-seek.jpg', 'Images/Entertainment/fitness.png'];
+var imgs = ['Images/Entertainment/music.jpg', 'Images/Entertainment/art.jpg', 'Images/Entertainment/boardGames.jpg', 'Images/Entertainment/football.jpg', 'Images/Entertainment/basketball.jpg', 'Images/Entertainment/hide-and-seek.jpg', 'Images/Entertainment/fitness.png']; //the images
 
 function entertainment() {
-  
-   var rand = Math.floor(Math.random() * options.length);
+
+    var rand = Math.floor(Math.random() * options.length); //pushes out a random image when the button is clicked
 
     document.getElementById('text').innerHTML = options[rand];
     document.getElementById('optionsImgs').src = imgs[rand];
     console.log(rand);
 }
 
-var questions = [
+var questions = [ //questions for the  quiz
             'What is the most important thing needed to survive?', //0
             'How long can you survive without food?', //1
             'Which of the following will help you survive best?', //2
@@ -47,7 +47,7 @@ var questions = [
             'What should you must have in a bunker?', //8
         ];
 
-var answers = [
+var answers = [ //answers for the quiz
             ['Food', 'Water', 'Warmth', 'Entertainment'], //[0][0-3]
             ['3 hours', '3 days', '3 weeks', '2 weeks'], //[1][0-3]
             ['Experience', 'A positive mental attitude', 'Skill', 'Luck'], //[2][0-3]
@@ -69,18 +69,18 @@ var colorChange2 = 'white';
 var colorChange3 = 'white';
 var resetBtn = false;
 
-function loadQuestion() {
+function loadQuestion() { //code for loading the question
     randQ++;
-    document.getElementById('question').innerHTML = questions[randQ];
+    document.getElementById('question').innerHTML = questions[randQ]; //goes up in a select order
     console.log(randQ);
     for (var i = 0; i < 4; i++) {
-        document.getElementById('aText' + i).innerHTML = answers[randQ][i];
+        document.getElementById('aText' + i).innerHTML = answers[randQ][i]; //pushes out the answers related to the question
     }
     allOrange();
     button0();
 }
 
-function correctAnswer() {
+function correctAnswer() { //correct answer function
     document.getElementById('result').innerHTML = 'Correct';
     correct = true;
     document.getElementById('result').style.color = 'green';
@@ -88,17 +88,17 @@ function correctAnswer() {
     stop = true;
 }
 
-function incorrectAnswer() {
+function incorrectAnswer() { //incorret answer function
     document.getElementById('result').innerHTML = 'Incorrect';
     document.getElementById('result').style.color = 'red';
     stop = true;
     correct = true;
 }
 
-function check() {
+function check() { //checks if the user has got the answer right for quiz
     if (stop == false) {
-        if (randQ == 0) {
-            if (answer == 1) {
+        if (randQ == 0) { //Random question number 0
+            if (answer == 1) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange1 = 'green';
@@ -109,8 +109,8 @@ function check() {
                 incorrectCheck();
             }
         }
-        if (randQ == 1) {
-            if (answer == 2) {
+        if (randQ == 1) { //Random question number 1
+            if (answer == 2) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange2 = 'green';
@@ -121,8 +121,8 @@ function check() {
                 incorrectCheck();
             }
         }
-        if (randQ == 2) {
-            if (answer == 1) {
+        if (randQ == 2) { //Random question number 2
+            if (answer == 1) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange1 = 'green';
@@ -133,8 +133,8 @@ function check() {
                 incorrectCheck();
             }
         }
-        if (randQ == 3) {
-            if (answer == 0) {
+        if (randQ == 3) { //Random question number 3
+            if (answer == 0) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange0 = 'green';
@@ -145,8 +145,8 @@ function check() {
                 incorrectCheck();
             }
         }
-        if (randQ == 4) {
-            if (answer == 2) {
+        if (randQ == 4) { //Random question number 4
+            if (answer == 2) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange2 = 'green';
@@ -157,8 +157,8 @@ function check() {
                 incorrectCheck();
             }
         }
-        if (randQ == 5) {
-            if (answer == 3) {
+        if (randQ == 5) { //Random question number 5
+            if (answer == 3) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange3 = 'green';
@@ -169,8 +169,8 @@ function check() {
                 incorrectCheck();
             }
         }
-        if (randQ == 6) {
-            if (answer == 0) {
+        if (randQ == 6) { //Random question number 6
+            if (answer == 0) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange0 = 'green';
@@ -181,8 +181,8 @@ function check() {
                 incorrectCheck();
             }
         }
-        if (randQ == 7) {
-            if (answer == 2) {
+        if (randQ == 7) { //Random question number 7
+            if (answer == 2) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange2 = 'green';
@@ -193,36 +193,36 @@ function check() {
                 incorrectCheck();
             }
         }
-        if (randQ == 8) {
-            if (answer == 3) {
+        if (randQ == 8) { //Random question number 8
+            if (answer == 3) { // answer is correct and run the correct function
                 correctAnswer();
                 allOrange();
                 colorChange3 = 'green';
-            } else {
+            } else { //if wrong then run the incorrect function
                 incorrectAnswer();
                 allOrange();
                 colorChange3 = 'green';
                 incorrectCheck();
             }
-            if(randQ >=8){
+            if (randQ >= 8) { //end quiz
                 document.getElementById('nextBtn').innerHTML = 'Results';
                 document.getElementById('nextBtn').style.display = 'block';
-                
+
             }
         }
     }
 }
 
 
-function next() {
-    if(resetBtn == true){
-       window.location.href='info.html';
+function next() { //next button function
+    if (resetBtn == true) {
+        window.location.href = 'info.html'; //reloads page 
     }
-    if(randQ <=7){
-        
+    if (randQ <= 7) {
+
         if (correct == true) {
-            
-            if(randQ >=7){
+
+            if (randQ >= 7) {
                 document.getElementById('nextBtn').style.display = 'none';
 
             }
@@ -234,22 +234,22 @@ function next() {
             }
             stop = false;
         }
-    } else {
-        for(i = 0; i < 4; i++){
-        document.getElementById('answer'+i).style.display = 'none';
+    } else { //code for ending the quiz
+        for (i = 0; i < 4; i++) {
+            document.getElementById('answer' + i).style.display = 'none';
         }
         document.getElementById('answer-buttons').style.display = 'none';
-         document.getElementById('result').style.display = "none";
+        document.getElementById('result').style.display = "none";
         document.getElementById('question').style.display = 'none';
         document.getElementById('score').style.fontSize = '40px';
-        document.getElementById('score').innerHTML = 'Well done, you got ' + score;
-        
-        document.getElementById('nextBtn').innerHTML = "Try Again?"; 
+        document.getElementById('score').innerHTML = 'Well done, you got ' + score; //displays how many you got correct
+
+        document.getElementById('nextBtn').innerHTML = "Try Again?"; //changes nextBtn to Try again button
         resetBtn = true;
-    }  
+    }
 }
 
-function button0() {
+function button0() { //changes quiz button color depending if you got it correct or not
     if (stop == true) {
         document.getElementById('answer0').style.backgroundColor = colorChange0;
         document.getElementById('answer1').style.backgroundColor = colorChange1;
@@ -258,7 +258,7 @@ function button0() {
     }
 }
 
-function incorrectCheck() {
+function incorrectCheck() { //changes color to red
     if (answer == 0) {
         colorChange0 = 'red';
     }
@@ -273,7 +273,7 @@ function incorrectCheck() {
     }
 }
 
-function allOrange() {
+function allOrange() { //resets quiz buttons color to orange
     colorChange0 = 'orange';
     colorChange1 = 'orange';
     colorChange2 = 'orange';

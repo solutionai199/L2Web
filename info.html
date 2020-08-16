@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<!--        this defines the language-->
 
 <head>
     <meta charset="UTF-8">
@@ -13,11 +14,13 @@
         <div class='nav-background' id='mySidebar'>
             <div id="menu-nav" class="overflow-nav">
                 <button class="openbtn" onclick="Nav()">☰</button>
+                <!--nav bar-->
             </div>
             <div class="sidebar" id='second-sidebar'>
                 <a href="index.html">Home</a>
                 <a href="guide.html">Guide</a>
                 <a href="info.html">Info</a>
+                <!--links-->
             </div>
         </div>
 
@@ -26,26 +29,28 @@
 
                 <h2>Quiz</h2>
 
-                <div class="questionText" id="question"></div>  
+                <div class="questionText" id="question"></div>
+                <!--                Questions for quiz-->
 
                 <div id="answer-buttons" class="btn-grid">
+                    <!--                    Answer buttons-->
 
                     <button class="quiz-btn" id="answer0" onclick="answer = 0; check(); button0()">
-                        <p1 id="aText0"></p1>
+                        <span id="aText0"></span>
                     </button>
                     <button class="quiz-btn" id="answer1" onclick="answer = 1; check(); button0()">
-                        <p1 id="aText1"></p1>
+                        <span id="aText1"></span>
                     </button>
                     <button class="quiz-btn" id="answer2" onclick="answer = 2; check(); button0()">
-                        <p1 id="aText2"></p1>
+                        <span id="aText2"></span>
                     </button>
-                    <button class="quiz-btn" id="answer3" onclick="answer = 3; check(); button0()" >
-                        <p1 id="aText3"></p1>
+                    <button class="quiz-btn" id="answer3" onclick="answer = 3; check(); button0()">
+                        <span id="aText3"></span>
                     </button>
                 </div>
                 <div class="controls">
-<!--                    <button class="check-btn" onclick="check()">Check</button>-->
                     <button id="nextBtn" class="next-btn" onclick="next()">Next</button>
+                    <!--                    Next button-->
                     <div class="resultText" id="result"></div>
                 </div>
                 <div class="scoreText" id="score"></div>
